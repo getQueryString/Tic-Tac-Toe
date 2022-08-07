@@ -8,3 +8,8 @@ git clone https://github.com/getQueryString/Tic-Tac-Toe.git
 
 java -jar Tic-Tac-Toe.jar
 ```
+If _JDK 17_ is required:
+```
+sudo apt update
+sudo apt install openjdk-17-jdk
+```

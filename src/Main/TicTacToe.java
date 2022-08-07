@@ -1,4 +1,4 @@
-// Copyright© by Fin & https://stackoverflow.com/questions/23233456/tic-tac-toe-in-java-using-2-d-arrays
+// Copyright© by Fin & https://stackoverflow.com/questions/23233456/tic-tac-toe-in-java-using-2-d-arrays & https://stackoverflow.com/questions/22571979/2d-arrays-tictactoe-program
 
 package Main;
 
@@ -19,16 +19,18 @@ public class TicTacToe {
     static String column = "0";
     static String choose = "0 or 1!";
     static String occupied = "Occupied!";
+    static String tieGame = "Tie game!";
     static String seeYou = "See you next time!";
 
     static int player = 1;
+    static int moveCount = 0;
 
     static boolean done = false;
     static boolean flag = false;
-    static boolean flag1 = false;
-    static boolean flag2 = false;
-    static boolean flag3 = false;
-    static boolean flag4 = false;
+    static boolean horizontalFlag = false;
+    static boolean verticalFlag = false;
+    static boolean topLeftToBottomRightFlag = false;
+    static boolean topRigthToBottomLeftFlag = false;
 
     public static void main(String[] args) {
         System.out.println("- Version 1.0 -");
@@ -82,6 +84,7 @@ public class TicTacToe {
             board[Integer.parseInt(row)][Integer.parseInt(column)] = "O";
             player = 1;
         }
+        moveCount++;
         printBoard(board);
         checkForWinner(board);
         choosePosition();
@@ -98,34 +101,32 @@ public class TicTacToe {
     }
 
     static void checkForWinner(String[][] board) {
-        for (int horizontal = 0; horizontal <= 2; horizontal++) {
-            if (Objects.equals(board[horizontal][0], board[horizontal][1]) && Objects.equals(board[horizontal][1], board[horizontal][2]) && !Objects.equals(board[horizontal][2], " ")) {
-                flag1 = true;
-                break;
-            }
+        if (Objects.equals(board[Integer.parseInt(row)][0], board[Integer.parseInt(row)][1]) && Objects.equals(board[Integer.parseInt(row)][1], board[Integer.parseInt(row)][2]) && (Objects.equals(board[Integer.parseInt(row)][2], "X") || Objects.equals(board[Integer.parseInt(row)][2], "O"))) {
+            horizontalFlag = true;
+        }
+        if (Objects.equals(board[0][Integer.parseInt(column)], board[1][Integer.parseInt(column)]) && Objects.equals(board[1][Integer.parseInt(column)], board[2][Integer.parseInt(column)]) && (Objects.equals(board[2][Integer.parseInt(column)], "X") || Objects.equals(board[Integer.parseInt(column)][2], "O"))) {
+            verticalFlag = true;
         }
 
-        for (int vertical = 0; vertical <= 2; vertical++) {
-            if (Objects.equals(board[vertical][0], board[vertical][1]) && Objects.equals(board[vertical][1], board[vertical][2]) && !Objects.equals(board[vertical][2], " ")) {
-                flag2 = true;
-                break;
-            }
+        if (Objects.equals(board[0][0], board[1][1]) && Objects.equals(board[1][1], board[2][2]) && (Objects.equals(board[0][0], "X") || Objects.equals(board[0][0], "O"))) {
+            topLeftToBottomRightFlag = true;
         }
 
-        if (Objects.equals(board[0][0], board[1][1]) && Objects.equals(board[1][1], board[2][2]) && !Objects.equals(board[2][2], " ")) {
-            flag3 = true;
+        if (Objects.equals(board[2][0], board[1][1]) && Objects.equals(board[1][1], board[0][2]) && (Objects.equals(board[2][0], "X") || Objects.equals(board[2][0], "O"))) {
+            topRigthToBottomLeftFlag = true;
         }
 
-        if (Objects.equals(board[0][2], board[1][1]) && Objects.equals(board[2][0], board[2][2]) && !Objects.equals(board[2][0], " ")) {
-            flag4 = true;
+        if (moveCount == 8) {
+            System.out.println(tieGame);
+            choosePosition();
         }
 
-        if (flag1 || flag2 || flag3 || flag4) {
+        if (horizontalFlag || verticalFlag || topLeftToBottomRightFlag || topRigthToBottomLeftFlag) {
             flag = true;
-            flag1 = false;
-            flag2 = false;
-            flag3 = false;
-            flag4 = false;
+            horizontalFlag = false;
+            verticalFlag = false;
+            topLeftToBottomRightFlag = false;
+            topRigthToBottomLeftFlag = false;
 
             for (int i = 0; i < board.length; i++) {
                 for (int i1 = 0; i1 < board.length; i1++) {
@@ -138,6 +139,7 @@ public class TicTacToe {
             System.out.println("Again? y/n");
 
             player = 1;
+            moveCount = 0;
 
             String choose = input.nextLine();
             if (choose.equals("y")) {
