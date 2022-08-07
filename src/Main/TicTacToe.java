@@ -21,6 +21,7 @@ public class TicTacToe {
     static String column = "0";
     static String choose = "0 or 1!";
     static String occupied = "Occupied!";
+    static String seeYou = "See you next time!";
 
     static boolean flag = false;
     static boolean flag1 = false;
@@ -39,7 +40,7 @@ public class TicTacToe {
                 System.out.println("Player " + player + ": Enter row (Zeile): ");
                 row = input.nextLine();
                 if (row.equals("exit")) {
-                    break;
+                    exit();
                 }
                 if (!(Integer.parseInt(row) >= 0 && Integer.parseInt(row) <= 2)) {
                     System.out.println(choose);
@@ -50,7 +51,7 @@ public class TicTacToe {
                 System.out.println("Player " + player + ": Enter column (Spalte): ");
                 column = input.nextLine();
                 if (column.equals("exit")) {
-                    break;
+                    exit();
                 }
                 if (!(Integer.parseInt(column) >= 0 && Integer.parseInt(column) <= 2)) {
                     System.out.println(choose);
@@ -141,9 +142,13 @@ public class TicTacToe {
             if (choose.equals("y")) {
                 choosePosition();
             } else {
-                System.out.println("See you next time!");
-                System.exit(0);
+                exit();
             }
         }
+    }
+
+    static void exit(){
+        System.out.println(seeYou);
+        System.exit(0);
     }
 }
