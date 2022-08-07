@@ -137,7 +137,7 @@ public class TicTacToe {
                 }
             }
 
-            System.out.println(player == 1 ? "Player 2 is the winner!" : "Player 1 is the winner!");
+            System.out.println(player == 1 ? "PLAYER 2 IS THE WINNER!" : "PLAYER 1 IS THE WINNER!");
             System.out.println();
             System.out.println(playAgain);
 
