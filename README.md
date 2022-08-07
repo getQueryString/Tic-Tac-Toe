@@ -10,7 +10,7 @@ _The player who gets three characters in a row first wins._
 
 ### Run:
 
-#### Windows _and_ Linux:
+**Windows _and_ Linux:**
 ```
 git clone https://github.com/getQueryString/Tic-Tac-Toe.git
 
@@ -18,8 +18,10 @@ git clone https://github.com/getQueryString/Tic-Tac-Toe.git
 
 java -jar Tic-Tac-Toe.jar
 ```
-#### If _JDK 17_ is required:
-```
+### If _JDK 17_ is required:
+**Linux:**
+```bash
 sudo apt update
 sudo apt install openjdk-17-jdk
 ```
+**Windows:** [Download here](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
