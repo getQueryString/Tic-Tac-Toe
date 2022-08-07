@@ -15,14 +15,15 @@ public class TicTacToe {
                     {" ", " ", " "}
             };
 
-    static boolean done = false;
-    static int player = 1;
     static String row = "0";
     static String column = "0";
     static String choose = "0 or 1!";
     static String occupied = "Occupied!";
     static String seeYou = "See you next time!";
 
+    static int player = 1;
+
+    static boolean done = false;
     static boolean flag = false;
     static boolean flag1 = false;
     static boolean flag2 = false;
