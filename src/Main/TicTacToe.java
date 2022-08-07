@@ -34,7 +34,8 @@ public class TicTacToe {
     static boolean topRigthToBottomLeftFlag = false;
 
     public static void main(String[] args) {
-        System.out.println("- Version 1.0 -");
+        System.out.println("- Version 1.0 -\n");
+        printBoard(board);
         System.out.println();
         choosePosition();
     }
