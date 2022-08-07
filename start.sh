@@ -1,1 +1,1 @@
-java -jar src/Main/Tic-Tac-Toe.jar
+java -jar Tic-Tac-Toe.jar
