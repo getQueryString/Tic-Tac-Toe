@@ -136,9 +136,7 @@ public class TicTacToe {
 
             player = 1;
 
-            Scanner nextRound = new Scanner(System.in);
-            String choose = nextRound.nextLine();
-
+            String choose = input.nextLine();
             if (choose.equals("y")) {
                 choosePosition();
             } else {
@@ -147,7 +145,7 @@ public class TicTacToe {
         }
     }
 
-    static void exit(){
+    static void exit() {
         System.out.println(seeYou);
         System.exit(0);
     }
