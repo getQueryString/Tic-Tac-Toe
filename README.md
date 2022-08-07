@@ -1,6 +1,16 @@
 # Tic-Tac-Toe
 
-Windows _and_ Linux:
+### Control:
++ Step 1: Type row field (0-2)
++ Step 2: Type column field (0-2)
++ Type "exit" to exit
+
+### Rules:
+_The player who gets three characters in a row first wins._
+
+### Run:
+
+#### Windows _and_ Linux:
 ```
 git clone https://github.com/getQueryString/Tic-Tac-Toe.git
 
@@ -8,7 +18,7 @@ git clone https://github.com/getQueryString/Tic-Tac-Toe.git
 
 java -jar Tic-Tac-Toe.jar
 ```
-If _JDK 17_ is required:
+#### If _JDK 17_ is required:
 ```
 sudo apt update
 sudo apt install openjdk-17-jdk

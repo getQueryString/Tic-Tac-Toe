@@ -17,7 +17,7 @@ public class TicTacToe {
 
     static String row = "0";
     static String column = "0";
-    static String choose = "0 or 1!";
+    static String choose = "! Type '0'-'2' or 'exit' to exit !\n";
     static String occupied = "Occupied!";
     static String tieGame = "Tie game!";
     static String seeYou = "See you next time!";
