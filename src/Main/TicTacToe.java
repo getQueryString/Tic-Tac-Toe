@@ -20,6 +20,7 @@ public class TicTacToe {
     static String choose = "! Type '0'-'2' or 'exit' to exit !\n";
     static String occupied = "Occupied!";
     static String tieGame = "Tie game!";
+    static String playAgain = "Again? (y/n)";
     static String seeYou = "\nSee you next time!";
 
     static int player = 1;
@@ -136,7 +137,7 @@ public class TicTacToe {
 
             System.out.println(player == 1 ? "Player 2 is the winner!" : "Player 1 is the winner!");
             System.out.println();
-            System.out.println("Again? y/n");
+            System.out.println(playAgain);
 
             player = 1;
             moveCount = 0;
