@@ -20,7 +20,7 @@ public class TicTacToe {
     static String choose = "! Type '0'-'2' or 'exit' to exit !\n";
     static String occupied = "Occupied!";
     static String tieGame = "Tie game!";
-    static String seeYou = "See you next time!";
+    static String seeYou = "\nSee you next time!";
 
     static int player = 1;
     static int moveCount = 0;
