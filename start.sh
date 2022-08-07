@@ -1,1 +1,0 @@
-java -jar Tic-Tac-Toe.jar
